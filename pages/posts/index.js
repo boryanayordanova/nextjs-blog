@@ -1,5 +1,19 @@
-export default function AllPostsPage(){
-    return (
-        <h1>Posts Page</h1>
-    )
+import AllPosts from "../../components/posts/all-posts";
+import { getAllPosts } from "../../helpers/posts-util";
+
+export default function AllPostsPage(props) {
+  return (
+    <>
+      <AllPosts posts={props.posts} />
+    </>
+  );
+}
+
+export function getStaticProps() {
+  const allPosts = getAllPosts();
+  return {
+    props: {
+      posts: allPosts,
+    },
+  };
 }
