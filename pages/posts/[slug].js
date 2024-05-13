@@ -35,6 +35,6 @@ export function getStaticPaths() {
 
   return {
     paths: slugs.map((slug) => ({ params: { slug: slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
